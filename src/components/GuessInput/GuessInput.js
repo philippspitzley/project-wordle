@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessInput({ guesses, setGuesses }) {
+function GuessInput({ guesses, setGuesses, gameOver }) {
   const [guess, setGuess] = React.useState("");
   return (
     <div>
@@ -22,6 +22,7 @@ function GuessInput({ guesses, setGuesses }) {
           value={guess}
           title="Must be 5 uppercase letters"
           onChange={(e) => setGuess(e.target.value.toUpperCase())}
+          disabled={gameOver}
         />
       </form>
     </div>
